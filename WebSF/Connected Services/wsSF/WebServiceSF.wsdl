@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="FechaServidor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoAdicional" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FechaServidorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FechaServidorResult" type="tns:ListadoRegistros" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ListadoRegistros">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Datos">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="ExisteError" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeError" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Acceso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoAdicional" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccesoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AccesoResult" type="tns:ListadoRegistros" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Catalogos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Catalogo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoAdicional" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CatalogosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CatalogosResult" type="tns:ListadoRegistros" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Registra_Ingresos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ingreso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoAdicional" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Registra_IngresosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Registra_IngresosResult" type="tns:ListadoRegistros" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Registra_Egresos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Egreso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoAdicional" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Registra_EgresosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Registra_EgresosResult" type="tns:ListadoRegistros" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Registra_Bitacora">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoAdicional" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Registra_BitacoraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Registra_BitacoraResult" type="tns:ListadoRegistros" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FechaServidorSoapIn">
+    <wsdl:part name="parameters" element="tns:FechaServidor" />
+  </wsdl:message>
+  <wsdl:message name="FechaServidorSoapOut">
+    <wsdl:part name="parameters" element="tns:FechaServidorResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccesoSoapIn">
+    <wsdl:part name="parameters" element="tns:Acceso" />
+  </wsdl:message>
+  <wsdl:message name="AccesoSoapOut">
+    <wsdl:part name="parameters" element="tns:AccesoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CatalogosSoapIn">
+    <wsdl:part name="parameters" element="tns:Catalogos" />
+  </wsdl:message>
+  <wsdl:message name="CatalogosSoapOut">
+    <wsdl:part name="parameters" element="tns:CatalogosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Registra_IngresosSoapIn">
+    <wsdl:part name="parameters" element="tns:Registra_Ingresos" />
+  </wsdl:message>
+  <wsdl:message name="Registra_IngresosSoapOut">
+    <wsdl:part name="parameters" element="tns:Registra_IngresosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Registra_EgresosSoapIn">
+    <wsdl:part name="parameters" element="tns:Registra_Egresos" />
+  </wsdl:message>
+  <wsdl:message name="Registra_EgresosSoapOut">
+    <wsdl:part name="parameters" element="tns:Registra_EgresosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Registra_BitacoraSoapIn">
+    <wsdl:part name="parameters" element="tns:Registra_Bitacora" />
+  </wsdl:message>
+  <wsdl:message name="Registra_BitacoraSoapOut">
+    <wsdl:part name="parameters" element="tns:Registra_BitacoraResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSFSoap">
+    <wsdl:operation name="FechaServidor">
+      <wsdl:input message="tns:FechaServidorSoapIn" />
+      <wsdl:output message="tns:FechaServidorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Acceso">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Acceso</wsdl:documentation>
+      <wsdl:input message="tns:AccesoSoapIn" />
+      <wsdl:output message="tns:AccesoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Catalogos">
+      <wsdl:input message="tns:CatalogosSoapIn" />
+      <wsdl:output message="tns:CatalogosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Registra_Ingresos">
+      <wsdl:input message="tns:Registra_IngresosSoapIn" />
+      <wsdl:output message="tns:Registra_IngresosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Registra_Egresos">
+      <wsdl:input message="tns:Registra_EgresosSoapIn" />
+      <wsdl:output message="tns:Registra_EgresosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Registra_Bitacora">
+      <wsdl:input message="tns:Registra_BitacoraSoapIn" />
+      <wsdl:output message="tns:Registra_BitacoraSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSFSoap" type="tns:WebServiceSFSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FechaServidor">
+      <soap:operation soapAction="http://tempuri.org/FechaServidor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Acceso">
+      <soap:operation soapAction="http://tempuri.org/Acceso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Catalogos">
+      <soap:operation soapAction="http://tempuri.org/Catalogos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registra_Ingresos">
+      <soap:operation soapAction="http://tempuri.org/Registra_Ingresos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registra_Egresos">
+      <soap:operation soapAction="http://tempuri.org/Registra_Egresos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registra_Bitacora">
+      <soap:operation soapAction="http://tempuri.org/Registra_Bitacora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSFSoap12" type="tns:WebServiceSFSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FechaServidor">
+      <soap12:operation soapAction="http://tempuri.org/FechaServidor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Acceso">
+      <soap12:operation soapAction="http://tempuri.org/Acceso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Catalogos">
+      <soap12:operation soapAction="http://tempuri.org/Catalogos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registra_Ingresos">
+      <soap12:operation soapAction="http://tempuri.org/Registra_Ingresos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registra_Egresos">
+      <soap12:operation soapAction="http://tempuri.org/Registra_Egresos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registra_Bitacora">
+      <soap12:operation soapAction="http://tempuri.org/Registra_Bitacora" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceSF">
+    <wsdl:port name="WebServiceSFSoap" binding="tns:WebServiceSFSoap">
+      <soap:address location="https://localhost:44395/WebServiceSF.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSFSoap12" binding="tns:WebServiceSFSoap12">
+      <soap12:address location="https://localhost:44395/WebServiceSF.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
